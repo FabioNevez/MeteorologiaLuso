@@ -18,6 +18,13 @@ nav ul li a{
     text-decoration: none;
     color: black;
 }
+.body{
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    justify-content: center;
+    align-items: center;
+}
 
 footer{
     width: 100%;
@@ -29,3 +36,4 @@ footer{
     justify-content: center;
     background-color: var(--blue);
 }
+
