@@ -3,6 +3,7 @@ import Clock from '../Clock';
 import Country from './Country';
 import countries from '../Countries';
 import CityList from './List';
+import Meoteorology from './Meteorology';
 import '../layout.css';
 
 function LayoutHeader(){
@@ -40,10 +41,6 @@ function LayoutHeader(){
                     <div className="chooseCity" style={{display: isClicked ? "block" : "none"}}>
                     <ul>
                     {countries[7].states.map(createList)}
-                    {/* <CityList cityName={countries[7].states[0]} />
-                        <li onClick={clickCity}>Lisboa</li>
-                        <li onClick={clickCity}>Porto</li>
-                        <li onClick={clickCity}>Algarve</li> */}
                     </ul>
                     </div>
             </div>
