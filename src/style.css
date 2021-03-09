@@ -18,6 +18,42 @@ nav ul li a{
     text-decoration: none;
     color: black;
 }
+.subheader{
+    width: 100%;
+    background-color: #c7f3f5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 5rem;
+    overflow: hidden;
+}
+.subheader .countryBtn{
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    padding: 0 .5rem;
+    margin: .5rem;
+    border-radius: .2rem;
+}
+
+.subheader .countryBtn:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.055);
+}
+
+.countryBtn.inactive{
+    background-color: transparent;
+}
+
+.countryBtn.active{
+    background-color: white;
+}
+
+.subheader .countryBtn img{
+    height: 2rem;
+    padding-right: 1rem;
+}
+
 .body{
     display: flex;
     width: 100vw;

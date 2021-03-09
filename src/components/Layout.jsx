@@ -3,10 +3,10 @@ import LayoutHeader from './LayoutHeader';
 import Meteorology from './Meteorology';
 import '../layout.css';
 
-function Layout() {
+function Layout(props) {
     return (
         <div className="layout">
-            <LayoutHeader />
+            <LayoutHeader LayoutName={props.Cname} />
             <div className="content">
                 <Meteorology />
             </div>

@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import Clock from '../Clock';
 import Country from './Country';
 import countries from '../Countries';
-import CityList from './List';
-import Meoteorology from './Meteorology';
 import '../layout.css';
 
-function LayoutHeader(){
+function LayoutHeader(props){
     const[choose, setChosen] = useState("Choose city");
     const [isClicked, setClick] = useState(false);
 
@@ -34,7 +32,7 @@ function LayoutHeader(){
     return(
         <div className="layoutHeader">
             <div className="country">
-                <Country />
+                <Country name={props.LayoutName}/>
             </div>
             <div className="city">
                 <button type="button" className="clickCity" onClick={handleClick}>{choose}</button>
