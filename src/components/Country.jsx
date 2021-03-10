@@ -3,12 +3,11 @@ import '../layout.css';
 
 function Country(props) {
 
-    
-    function changeURLname(props){
+    let urlName = '';
 
-        let urlName = '';
+    function changeURLname(){
 
-        switch (props.value){
+        switch (props.name){
             case 'Portugal':
                 return urlName = 'portugal';
                 break;
@@ -43,10 +42,10 @@ function Country(props) {
     return(
         <div className="country">
             <div className="flag">
-                <img src={process.env.PUBLIC_URL + `/flags/${changeURLname(props)}.png`} alt={props.name}></img>
+                <img src={process.env.PUBLIC_URL + `/flags/${changeURLname(urlName)}.png`} alt={props.name}></img>
             </div>
             <div className="countryName">
-               <p>{props.LayoutName}</p>
+               <p>{props.name}</p>
             </div>
         </div>
     )

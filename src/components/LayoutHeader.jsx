@@ -9,7 +9,7 @@ function LayoutHeader(props){
     const [isClicked, setClick] = useState(false);
 
     function handleClick(){
-        setClick(true);
+        setClick(true); 
     }
 
     function clickCity (event) {
@@ -29,16 +29,49 @@ function LayoutHeader(props){
         cityName={city} />
     }
 
+     let x = '';
+ 
+        switch (props.LayoutName){
+            case "Angola":
+                 x = countries[0];
+                break;
+            case 'Brasil':
+                 x = countries[1];
+                break;
+            case 'Cabo Verde':
+                 x = countries[2];
+                break;
+            case 'Guiné Bissau':
+                 x = countries[3];
+                break;
+            case 'Macau':
+                 x = countries[4];
+                break;
+            case 'Moçambique':
+                 x = countries[5];
+                break;
+            case 'Portugal':
+                 x = countries[6];
+            break;
+            case 'São Tomé e Príncipe':
+                 x = countries[7];
+                break;
+            case 'Timor Leste':
+                 x = countries[8];
+                break;
+        
+        }
+
     return(
         <div className="layoutHeader">
-            <div className="country">
+            <div className="country" id="nname">
                 <Country name={props.LayoutName}/>
             </div>
             <div className="city">
                 <button type="button" className="clickCity" onClick={handleClick}>{choose}</button>
                     <div className="chooseCity" style={{display: isClicked ? "block" : "none"}}>
                     <ul>
-                    {countries[7].states.map(createList)}
+                        {x.states.map(createList)}
                     </ul>
                     </div>
             </div>
