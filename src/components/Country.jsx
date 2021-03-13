@@ -40,6 +40,7 @@ function Country(props) {
     }
     
     return(
+        <div className="country" id="nname">
         <div className="country">
             <div className="flag">
                 <img src={process.env.PUBLIC_URL + `/flags/${changeURLname(urlName)}.png`} alt={props.name}></img>
@@ -47,6 +48,7 @@ function Country(props) {
             <div className="countryName">
                <p>{props.name}</p>
             </div>
+        </div>
         </div>
     )
 }

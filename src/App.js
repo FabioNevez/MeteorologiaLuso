@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Layout from './components/Layout';
 import SubHeader from './components/SubHeader';
-import {useState} from 'react';
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import Portugal from './pages/portugal';
 import Angola from './pages/angola';
@@ -15,6 +14,7 @@ import Mocambique from './pages/mocambique';
 import SaoTomePrincipe from './pages/sao-tome-principe';
 import TimorLeste from './pages/timor-leste';
 import Home from './pages/home';
+import About from './pages/about';
 
 function App() {
 
@@ -26,6 +26,7 @@ function App() {
     <div className="body">
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/About" component={About} />
         <Route path="/Portugal" component={Portugal} />
         <Route path="/Angola" component={Angola} />
         <Route path="/Brasil" component={Brasil} />

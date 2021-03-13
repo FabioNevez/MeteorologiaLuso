@@ -1,14 +1,15 @@
 import React from 'react';
 import '../style.css';
+import {Link} from 'react-router-dom';
 
 function Header (){
     return (
     <nav>
         <div className="logo">
-            <h1>Info Lusofonia</h1>
+        <Link to={'/'}><h1>Info Lusofonia</h1></Link>
         </div>
         <ul>
-            <li><a href="#">About</a></li>
+        <Link to={'/About'}><li>About</li></Link>
         </ul>
     </nav>
     )

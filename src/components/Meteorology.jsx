@@ -2,66 +2,213 @@ import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 import '../layout.css';
 import 'moment/locale/pt';
+import keys from '../CountriesKey';
 
-function Meteorology() {
+function Meteorology(props) {
 
-    // const api = {
-    //     key: '96814042cd586e3292132202c9b70bcf',
-    //     base: 'https://api.openweathermap.org/data/2.5/'
-    // }
+    let c = keys[0];
+ 
+    switch (props.country){
+        case "Angola":
+             c = keys[0];
+            break;
+        case 'Brasil':
+             c = keys[1];
+            break;
+        case 'Cabo Verde':
+             c = keys[2];
+            break;
+        case 'Guiné Bissau':
+             c = keys[3];
+            break;
+        case 'Macau':
+             c = keys[4];
+            break;
+        case 'Moçambique':
+             c = keys[5];
+            break;
+        case 'Portugal':
+             c = keys[6];
+        break;
+        case 'São Tomé e Príncipe':
+             c = keys[7];
+            break;
+        case 'Timor Leste':
+             c = keys[8];
+            break;
+    }
 
-    // const api = {
-    //     key: '96814042cd586e3292132202c9b70bcf',
-    //     base: 'https://api.openweathermap.org/data/2.5/'
-    // }
+    let y = c.cities[0];
+ 
+    switch (props.city){
+        case "Bengo":
+        case "Acre":
+        case "Bafatá": 
+        case "Macau":
+        case "Niassa":
+        case "Aveiro":
+        case "Príncipe":
+        case "Aileu":
+             y = c.cities[0];
+            break;
+        case "Benguela":
+        case "Alagoas":
+        case "Bolama":
+        case "Manica":
+        case "Beja":
+        case "São Tomé":
+        case "Ainaro":
+             y = c.cities[1];
+            break;
+        case "Bie":
+        case "Amazonas":
+        case "Biombo":
+        case "Gaza":
+        case "Braga":
+        case "Baucau":
+             y = c.cities[2];
+            break;
+        case "Cabinda":
+        case "Amapá":
+        case "Bissau":
+        case "Inhambane":
+        case "Bragança":
+        case "Bobonaro":
+             y = c.cities[3];
+            break;
+        case "Kuando Kubango":
+        case "Bahia":
+        case "Cacheu":
+        case "Maputo":
+        case "Coimbra":
+        case "Cova Lima":
+             y = c.cities[4];
+            break;
+        case "Cunene":
+        case "Ceará":
+        case "Gabú":
+        case "Nampula":
+        case "Évora":
+        case "Díli":
+             y = c.cities[5];
+            break;
+        case "Kwanza Norte":
+        case "Distrito Federal":
+        case "Oio":
+        case "Cabo Delgado":
+        case "Faro":
+        case "Ermera":
+             y = c.cities[6];
+            break;
+        case "Kwanza Sul":
+        case "Goiás":
+        case "Quinara":
+        case "Zambézia":
+        case "Guarda":
+        case "Lautein":
+             y = c.cities[7];
+            break;
+        case "Huambo":
+        case "Maranhão":
+        case "Tombali":
+        case "Sofala":
+        case "Leiria":
+        case "Liquiça":
+             y = c.cities[8];
+            break;
+        case "Huila":
+        case "Minas Gerais":
+        case "Tete":
+        case "Lisboa":
+        case "Manufahi":
+             y = c.cities[9];
+            break;
+        case "Lunda Norte":
+        case "Mato Grosso Do Sul":
+        case "Portalegre":
+        case "Manatuto":
+             y = c.cities[10];
+            break;
+        case "Lunda Sul":
+        case "Mato Grosso":
+        case "Porto":
+        case "Oekusi-Ambenu":
+             y = c.cities[11];
+            break;
+        case "Luanda":
+        case "Pará":
+        case "Santarém":
+        case "Viqueque":
+             y = c.cities[12];
+            break;
+        case "Malanje":
+        case "Paraíba":
+        case "Setúbal":
+             y = c.cities[13];
+            break;
+        case "Moxico":
+        case "Pernambuco":
+        case "Viana do Castelo":
+             y = c.cities[14];
+            break;
+        case "Namibe":
+        case "Piauí":
+        case "Vila Real":
+             y = c.cities[15];
+            break;
+        case "Uige":
+        case "Paraná":
+        case "Viseu":
+             y = c.cities[16];
+            break;
+        case "Zaire":
+        case "Rio De Janeiro":
+        case "Azores":
+             y = c.cities[17];
+            break;
+        case "Rio Grande Do Norte":
+        case "Madeira":
+             y = c.cities[18];
+            break;
+        case "Rondônia":
+        case "Portalegre":
+             y = c.cities[19];
+            break;
+        case "Roraima":
+             y = c.cities[20];
+            break;
+        case "Rio Grande Do Sul":
+             y = c.cities[21];
+            break;
+        case "Santa Catarina":
+             y = c.cities[22];
+            break;
+        case "Sergipe":
+             y = c.cities[23];
+            break;
+        case "São Paulo":
+             y = c.cities[24];
+            break;
+        case "Tocantins":
+             y = c.cities[25];
+            break;
+    }
+    let k = y.key;
 
-     // useEffect(() => {
-    //     fetch(`${api.base}weather?q=Lisbon&units=metric&appid=${api.key}`)
-    //     .then(res => res.json())
-    //     .then(
-    //         (result) => {
-    //             // setCity('');
-    //             setIsLoaded(true);
-    //             setWeather(result);
-    //            // console.log(result);
-    //         },
-    //         (error) => {
-    //             setIsLoaded(true);
-    //             setError(error);
-    //         }
-    //     )
-    // }, [])
-
-    // useEffect(() => {
-    //     fetch(`${api.base}forecast?q=Lisbon&units=metric&appid=${api.key}`)
-    //     .then(res => res.json())
-    //     .then(
-    //         (result) => {
-    //             // setCity('');
-    //             setIsLoaded(true);
-    //             setWeather(result);
-    //             console.log(result);
-    //         },
-    //         (error) => {
-    //             setIsLoaded(true);
-    //             setError(error);
-    //         }
-    //     )
-    // }, [])
-
-    // <img className="icon" src={`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`}></img> 
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
    // const [city, setCity] = useState('');
     const [weather, setWeather] = useState([]);
 
-    const api = {
-        key: '4xon6ErtNw0MSLbFrFgR8pfhvB2GH6J4'
-    }
+    // useEffect(() => {
+    //             setValue(document.querySelector('.clickCity').innerHTML);
+    // }, []);
+
+    // console.log(y.key);
 
     useEffect(() => {
-        fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/274087?apikey=${api.key}&language=en-US&details=false&metric=true`)
+        fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${k}?apikey=${process.env.REACT_APP_SECRET_KEY}&language=en-US&details=false&metric=true`)
         .then(res => res.json())
         .then(
             (result) => {
@@ -75,7 +222,7 @@ function Meteorology() {
                 setError(error);
             }
         )
-    }, [])
+    }, [props.city])
 
       const day = new Date();
       const n = day.getDate();
@@ -90,6 +237,23 @@ function Meteorology() {
           weekday[6] = "Saturday";
 
       const wkDay = weekday[day.getDay()];
+
+      //console.log(weather.DailyForecasts[3].Day.Icon);
+
+
+    //   const getIcon0 = weather.DailyForecasts[0].Day.Icon;
+    //   const getIcon1 = weather.DailyForecasts[1].Day.Icon;
+    //   const getIcon2 = weather.DailyForecasts[2].Day.Icon;
+    //   const getIcon3 = weather.DailyForecasts[3].Day.Icon;
+    //   const getIcon4 = weather.DailyForecasts[4].Day.Icon;
+
+    // const icon0 = (getIcon0 < 10) ? '0' + getIcon0 : getIcon0;
+    // const icon1 = (getIcon1 < 10) ? '0' + getIcon1 : getIcon1;
+    // const icon2 = (getIcon2 < 10) ? '0' + getIcon2 : getIcon2;
+    // const icon3 = (getIcon3 < 10) ? '0' + getIcon3 : getIcon3;
+    // const icon4 = (getIcon4 < 10) ? '0' + getIcon4 : getIcon4;
+
+    // (weather.DailyForecasts[0].Day.Icon < 10) ? '0' + weather.DailyForecasts[0].Day.Icon : weather.DailyForecasts[0].Day.Icon;
 
     if(error){
         return <div>Error: {error.message}</div>
@@ -106,7 +270,7 @@ function Meteorology() {
                         <h3>{moment().format('dddd')}</h3>
                     </div>
                     
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/0${weather.DailyForecasts[0].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[0].Day.Icon < 10) ? '0' + weather.DailyForecasts[0].Day.Icon : weather.DailyForecasts[0].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[0].Temperature.Maximum.Value)}°C</p></div>
                     </div>
            
@@ -115,7 +279,7 @@ function Meteorology() {
                         <h2>{moment().add(1, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(1, 'days').format('dddd')}</h3>
                     </div>
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/0${weather.DailyForecasts[1].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[1].Day.Icon < 10) ? '0' + weather.DailyForecasts[1].Day.Icon : weather.DailyForecasts[1].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[1].Temperature.Maximum.Value)}°C</p></div>
                 </div>
                 
@@ -124,7 +288,7 @@ function Meteorology() {
                         <h2>{moment().add(2, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(2, 'days').format('dddd')}</h3>
                     </div>
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/0${weather.DailyForecasts[2].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[2].Day.Icon < 10) ? '0' + weather.DailyForecasts[2].Day.Icon : weather.DailyForecasts[2].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[2].Temperature.Maximum.Value)}°C</p></div>
                 </div>
                 
@@ -133,7 +297,7 @@ function Meteorology() {
                         <h2>{moment().add(3, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(3, 'days').format('dddd')}</h3>
                     </div>
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/0${weather.DailyForecasts[3].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[3].Day.Icon < 10) ? '0' + weather.DailyForecasts[3].Day.Icon : weather.DailyForecasts[3].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[3].Temperature.Maximum.Value)}°C</p></div>
                 </div>
                 <div className="card" id="dayFive">
@@ -141,7 +305,7 @@ function Meteorology() {
                         <h2>{moment().add(4, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(4, 'days').format('dddd')}</h3>
                     </div>
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/0${weather.DailyForecasts[4].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[4].Day.Icon < 10) ? '0' + weather.DailyForecasts[4].Day.Icon : weather.DailyForecasts[4].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[4].Temperature.Maximum.Value)}°C</p></div>
                 </div>
             </div>

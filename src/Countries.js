@@ -2,8 +2,10 @@ const countries = [
     {
       id: 0,
       country: "Angola",
-      states: ["Bengo", "Benguela", "Bie", "Cabinda", "Cuando Cubango", "Cuanza Norte", "Cuanza Sul", "Cunene", "Huambo", "Huila", "Luanda", "Lunda Norte", "Lunda Sul", "Malanje", "Moxico", "Namibe", "Uige", "Zaire"]
+      states: ["Bengo", "Benguela", "Bie", "Cabinda", "Kuando Kubango", "Cunene", "Kwanza Norte", "Kwanza Sul", "Huambo", "Huila", "Lunda Norte", "Lunda Sul", "Luanda", "Malanje", "Moxico", "Namibe", "Uige", "Zaire"]
     },
+    
+       
     {
       id: 1,
       country: "Brazil",
@@ -25,14 +27,14 @@ const countries = [
       states : ["Cidade de Macau"]
     },
     {
-        id: 5,
+      id: 5,
       country: "Mozambique",
       states: ["Cabo Delgado", "Gaza", "Inhambane", "Manica", "Maputo", "Cidade de Maputo", "Nampula", "Niassa", "Sofala", "Tete", "Zambezia"]
     },
     {
-        id: 6,
+      id: 6,
       country: "Portugal",
-      states: ["Aveiro", "Acores", "Beja", "Braga", "Braganca", "Castelo Branco", "Coimbra", "Evora", "Faro", "Guarda", "Leiria", "Lisboa", "Madeira", "Portalegre", "Porto", "Santarem", "Setubal", "Viana do Castelo", "Vila Real", "Viseu"]
+      states: ["Aveiro", "Açores", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra", "Evora", "Faro", "Guarda", "Leiria", "Lisboa", "Madeira", "Portalegre", "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"]
     },
     {
         id: 7,
@@ -40,7 +42,7 @@ const countries = [
       states: ["Água Grande","Cantagalo","Caué","Lembá","Lobata","Mé-Zóchi","Autonomous Region of Príncipe"]
     },
     {
-      id: 8,
+    id: 8,
     country: "East Timor",
     states: ["Aileu", "Ainaro", "Baucau", "Bobonaro", "Cova-Lima", "Dili", "Ermera", "Lautem", "Liquica", "Manatuto", "Manufahi", "Oecussi", "Viqueque"]
     }
