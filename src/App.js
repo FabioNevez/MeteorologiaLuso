@@ -1,7 +1,6 @@
 import './style.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Layout from './components/Layout';
 import SubHeader from './components/SubHeader';
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import Portugal from './pages/portugal';
@@ -35,12 +34,10 @@ function App() {
         <Route path="/Macau" component={Macau} />
         <Route path="/Mocambique" component={Mocambique} />
         <Route path="/Sao-tome-principe" component={SaoTomePrincipe} />
-        <Route path="/Timor-lest" component={TimorLeste} />
+        <Route path="/Timor-leste" component={TimorLeste} />
       </Switch>
     </div>
-    
      <Footer />
-    
    </div>
    </Router>
    );

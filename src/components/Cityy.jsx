@@ -1,14 +1,35 @@
-import React, {useState } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import countries from '../Countries';
-import List from './Layout';
-import City from './Layout';
-import CityClicked from './CityClicked';
-import keys from '../CountriesKey';
+import arrow from '../icons/arrow.svg';
+
+
 
 function Cityy(props){
 
     const [isClicked, setClick] = useState(false);
     const [chooseCity, chosenCity] = useState('Choose city');
+
+    function Outside(ref){
+        useEffect(() => {
+    
+            function handleClickOutside(event){
+                if(ref.current && !ref.current.contains(event.target)){
+                    setClick(false);
+                }
+            }
+    
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+    
+        }, [ref]);
+    }
+
+    
+
+    const wrapperRef = useRef(null);
+    Outside(wrapperRef);
 
     function City(props){
         return(
@@ -66,9 +87,12 @@ function Cityy(props){
 
     return  (
     <div className="city">
-        <button type="button" className="clickCity" onClick={handleClick}>{chooseCity}</button>  
+        <button ref={wrapperRef} type="button" className="clickCity" onClick={handleClick}>
+            {chooseCity}
+            <img src={arrow} style={{transform: isClicked ? "rotateX(180deg)" : "rotateX(0deg)"}} alt="arrow" />
+        </button>
             <div className="chooseCity" style={{display: isClicked ? "block" : "none"}}>
-            <ul>
+            <ul ref={wrapperRef}>
                 {x.states.map(createList)}
             </ul>
             </div>

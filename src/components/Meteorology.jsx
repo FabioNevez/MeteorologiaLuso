@@ -195,17 +195,10 @@ function Meteorology(props) {
     }
     let k = y.key;
 
-
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-   // const [city, setCity] = useState('');
     const [weather, setWeather] = useState([]);
 
-    // useEffect(() => {
-    //             setValue(document.querySelector('.clickCity').innerHTML);
-    // }, []);
-
-    // console.log(y.key);
 
     useEffect(() => {
         fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${k}?apikey=${process.env.REACT_APP_SECRET_KEY}&language=en-US&details=false&metric=true`)
@@ -224,9 +217,6 @@ function Meteorology(props) {
         )
     }, [props.city])
 
-      const day = new Date();
-      const n = day.getDate();
-
           const weekday = new Array(7);
           weekday[0] = "Sunday";
           weekday[1] = "Monday";
@@ -235,25 +225,6 @@ function Meteorology(props) {
           weekday[4] = "Thursday";
           weekday[5] = "Friday";
           weekday[6] = "Saturday";
-
-      const wkDay = weekday[day.getDay()];
-
-      //console.log(weather.DailyForecasts[3].Day.Icon);
-
-
-    //   const getIcon0 = weather.DailyForecasts[0].Day.Icon;
-    //   const getIcon1 = weather.DailyForecasts[1].Day.Icon;
-    //   const getIcon2 = weather.DailyForecasts[2].Day.Icon;
-    //   const getIcon3 = weather.DailyForecasts[3].Day.Icon;
-    //   const getIcon4 = weather.DailyForecasts[4].Day.Icon;
-
-    // const icon0 = (getIcon0 < 10) ? '0' + getIcon0 : getIcon0;
-    // const icon1 = (getIcon1 < 10) ? '0' + getIcon1 : getIcon1;
-    // const icon2 = (getIcon2 < 10) ? '0' + getIcon2 : getIcon2;
-    // const icon3 = (getIcon3 < 10) ? '0' + getIcon3 : getIcon3;
-    // const icon4 = (getIcon4 < 10) ? '0' + getIcon4 : getIcon4;
-
-    // (weather.DailyForecasts[0].Day.Icon < 10) ? '0' + weather.DailyForecasts[0].Day.Icon : weather.DailyForecasts[0].Day.Icon;
 
     if(error){
         return <div>Error: {error.message}</div>

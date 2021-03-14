@@ -1,11 +1,21 @@
+:root{
+    --blue:#3ACEB9;
+    --dark: #040941;
+    --light: #F1F3FC;
+}
+
 .layout{
     display: flex;
     flex-direction: column;
     width: 50rem;
     height: 20rem;
-    background-color: antiquewhite;
+    background-color: var(--blue);
     border-radius: .5rem;
+    -webkit-box-shadow: 5px 12px 20px -3px rgba(16,164,143,0.3); 
+    box-shadow: 5px 12px 20px -3px rgba(16,164,143,0.3);
+    padding: 0 1rem;
 }
+
 .content{
     height: 100%;
 }
@@ -16,9 +26,14 @@
     height: 3rem;
     margin-top: -1rem;
 }
+.cityCountry{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
 .country{
     text-align: center;
-    background-color: aliceblue;
+    background-color: var(--light);
     border-radius: .2rem;
     display: flex;
     padding: 0 .5rem;
@@ -39,28 +54,83 @@
     
 }
 .city button{
-    width: 7.5rem;
+    width: 10rem;
     height: 3rem;
-    background-color: aliceblue;
+    background-color: var(--light);
     color: rgb(100, 100, 100);
+    font-weight: 700;
     border-style: none;
     cursor: pointer;
     border-radius: .2rem;
+    padding-left: 1rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.city button:focus{
+   outline: none;
+   color: var(--blue);
+}
+.city button:active{
+    color: var(--dark);
+}
+.city button:hover{
+    background: #d8dbe7;
+}
+
+.city .clickCity img{
+    width: 1rem;
+    transition: all 0.75s ease-in-out;
+}
+.city .clickCity .icon{
+    content: "";
+    background: url("/src/icons/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 2rem;
+    margin-left: 1rem;
+    transition: all 0.4s ease-in-out;
+}
+.chooseCity{
+    overflow: hidden;
 }
 .chooseCity ul{
-    width: 7.5rem;
-    height: 100%;
+    width: 10rem;
+    max-height: 10rem;
     list-style: none;
-    background-color: aliceblue;
+    background-color: var(--light);
     text-align: left;
-    margin-top: 0;
+    margin-top: .5rem;
     border-radius: .2rem;
-    padding: .75rem .5rem;
+    padding: 0;
+    overflow-y: scroll;
+    border: .1rem solid #aaaaaa;
+    
 }
+.chooseCity ul::-webkit-scrollbar{
+    width: .5rem;
+    padding: .1rem;
+    background: var(--light);
+    background-color: rgba(0, 0, 0, 0.055);
+    border-radius: 1rem;
+    z-index: 2;
+}
+.chooseCity ul::-webkit-scrollbar-thumb{
+    background: var(--blue);
+    border-radius: 1rem;
+    z-index: 2;
+}
+
 .chooseCity ul li{
-    padding: 0.3rem 0;
+    padding: .5rem .5rem;
     cursor: pointer;
     border-bottom: rgb(116, 116, 116) solid .025rem;
+}
+.chooseCity ul li:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.055);
 }
 
 .city .chooseCity{
@@ -74,7 +144,7 @@
 .time{
     width: 7.5rem;
     height: 3rem;
-    background-color: aliceblue;
+    background-color: var(--light);
     text-align: center;
     border-radius: .2rem;
 }
@@ -87,8 +157,62 @@
     padding: 1rem 0;
 }
 .card{
-    background-color: aliceblue;
+    background-color: var(--light);
     padding: .5rem 1rem;
     border-radius: .5rem;
     text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+    .layout{
+        width: 100%;
+        height: 30rem;
+        padding: 0;
+    }
+    .cityCountry{
+        display: flex;
+        width: 1;
+        flex-direction: column;
+    }
+    .layoutHeader{
+        margin-bottom: 3rem;
+        align-items: center;
+        margin-top: -1rem;
+    }
+    .city{
+        margin-top: .5rem;
+    }
+    .time{
+        justify-content: center;
+        align-items: center;
+    }
+    .time p{
+        align-items: center;
+    }
+    .meteorologyBox{
+        flex-direction: column;
+        padding: .5rem 1rem;
+    }
+    .card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: .5rem 0;
+        padding: 0 .5rem;
+        width: 100%;
+    }
+    .weekDay{
+        flex: 1;
+    }
+    .icon{
+        flex: 1;
+    }
+    .icon img{
+        width: .5rem;
+    }
+    .temp{
+        float: 1;
+        align-self: center;
+        padding: .5rem;
+    }
 }

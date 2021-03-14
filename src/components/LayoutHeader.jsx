@@ -8,10 +8,11 @@ function LayoutHeader(props){
 
     return(
         <div className="layoutHeader">
-                
-                <Country name={props.LayoutName} />
-                <Cityy 
-                countryyName={props.LayoutName} cityChosenn={props.cityChosen} />
+        <div className="cityCountry">
+            <Country name={props.LayoutName} />
+            <Cityy countryyName={props.LayoutName} cityChosenn={props.cityChosen} />
+        </div>
+               
                 <Clock CountryName={props.LayoutName} />
         </div>
     )

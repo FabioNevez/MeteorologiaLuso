@@ -1,14 +1,16 @@
 
 :root{
-    --blue:#9AD1D4;
+    --blue:#3ACEB9;
+    --dark: #040941;
+    --light: #F1F3FC;
 }
 
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--blue);
-    color: black;
+    background-color: var(--light);
+    color: var(--dark);
     padding: 0 10rem;
 }
 nav ul{
@@ -16,14 +18,14 @@ nav ul{
 }
 nav ul a{
     text-decoration: none;
-    color: black;
+    color: var(--dark);
 }
 nav ul a:hover{
     font-weight: bold;
 }
 
 .logo a{
-    color: black;
+    color: var(--dark);
     text-decoration: none;
 }
 .logo a:hover{
@@ -32,12 +34,14 @@ nav ul a:hover{
 
 .subheader{
     width: 100%;
-    background-color: #c7f3f5;
+    background-color: var(--light);
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    padding: 0 5rem;
+    padding: 0;
     overflow: hidden;
+    border-top: #040941 solid .1rem;
 }
 .subheader .countryBtn{
     display: flex;
@@ -51,6 +55,8 @@ nav ul a:hover{
 .subheader .countryBtn:hover{
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.055);
+    color: var(--blue);
+    transition: all .2s ease-in;
 }
 
 .countryBtn.inactive{
@@ -58,7 +64,9 @@ nav ul a:hover{
 }
 
 .countryBtn.active{
-    background-color: white;
+    background-color: var(--blue);
+    color: var(--light);
+    transition: all .3s ease-in;
 }
 
 .subheader .countryBtn img{
@@ -66,11 +74,12 @@ nav ul a:hover{
     padding-right: 1rem;
 }
 .subheader a{
-    color: black;
+    color: var(--dark);
     text-decoration: none;
+    font-weight: 700;
 }
 .subheader a:hover{
-    font-weight: bold;
+    color: var(--dark);
 }
 
 .body{
@@ -89,6 +98,15 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--blue);
+    background-color: var(--light);
+}
+
+@media only screen and (max-width: 600px){
+    .subheader{
+        width: 75%;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
 }
 

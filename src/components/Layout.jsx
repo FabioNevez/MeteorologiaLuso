@@ -14,8 +14,7 @@ function Layout(props) {
 
     return (
         <div className="layout">
-            <LayoutHeader 
-            LayoutName={props.Cname} cityChosen={setInfoCity} />
+            <LayoutHeader LayoutName={props.Cname} cityChosen={setInfoCity} />
             <div className="content">
                 <Meteorology country={props.Cname} city={infoCity} cityy={setInfoCity} />
             </div>
