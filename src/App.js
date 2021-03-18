@@ -1,7 +1,6 @@
 import './style.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import SubHeader from './components/SubHeader';
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import Portugal from './pages/portugal';
 import Angola from './pages/angola';
@@ -21,7 +20,6 @@ function App() {
   <Router> 
   <div>
     <Header />
-    <SubHeader />
     <div className="body">
       <Switch>
         <Route path="/" exact component={Home} />

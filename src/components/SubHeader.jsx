@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import '../style.css';
 import {Link} from 'react-router-dom';
 
-function SubHeader () {
+function SubHeader (props) {
 
     const [subHeaderState, setSubHeaderState] = useState({
         activeObject: null,
@@ -16,7 +16,7 @@ function SubHeader () {
             {id: 7, name: "Macau", img: '/flags/macao.png', link: "Macau"}, 
             {id: 8, name: "Moçambique", img: '/flags/mozambique.png', link: "Mocambique"}, 
             {id: 9, name: "São Tomé e Principe", img: '/flags/sao-tome-and-prince.png', link: "Sao-tome-principe"}]
-    })
+    });
 
     function toggle(index){
         setSubHeaderState({...subHeaderState, activeObject: subHeaderState.objects[index] });
@@ -30,10 +30,15 @@ function SubHeader () {
         }
     }
 
+    let menu = 'subheader';
+    if(props.active != true){
+        menu += ' show';
+    }
+
     return (
-        <div className="subheader">
+        <div className={menu}>
             {subHeaderState.objects.map((elements, index) => (
-                <Link to={`/${elements.link}`}>
+                <Link to={`/${elements.link}`} >
                 <div key={index} className={toggleClass(index)} onClick={() => {toggle(index);}}>
                     <img src={process.env.PUBLIC_URL + `${elements.img}`} alt={elements.name}></img>
                     <p>{elements.name}</p>

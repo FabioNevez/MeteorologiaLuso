@@ -240,9 +240,10 @@ function Meteorology(props) {
                         <h2>{moment().format('D, MMMM')}</h2>
                         <h3>{moment().format('dddd')}</h3>
                     </div>
-                    
+                    <div className="fullTemp">
                     <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[0].Day.Icon < 10) ? '0' + weather.DailyForecasts[0].Day.Icon : weather.DailyForecasts[0].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[0].Temperature.Maximum.Value)}°C</p></div>
+                    </div>
                     </div>
            
                 <div className="card" id="dayTwo">
@@ -250,8 +251,10 @@ function Meteorology(props) {
                         <h2>{moment().add(1, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(1, 'days').format('dddd')}</h3>
                     </div>
+                    <div className="fullTemp">
                     <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[1].Day.Icon < 10) ? '0' + weather.DailyForecasts[1].Day.Icon : weather.DailyForecasts[1].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[1].Temperature.Maximum.Value)}°C</p></div>
+                    </div>
                 </div>
                 
                 <div className="card" id="dayThree">
@@ -259,8 +262,10 @@ function Meteorology(props) {
                         <h2>{moment().add(2, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(2, 'days').format('dddd')}</h3>
                     </div>
+                    <div className="fullTemp">
                     <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[2].Day.Icon < 10) ? '0' + weather.DailyForecasts[2].Day.Icon : weather.DailyForecasts[2].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[2].Temperature.Maximum.Value)}°C</p></div>
+                    </div>
                 </div>
                 
                 <div className="card" id="dayFour">
@@ -268,16 +273,20 @@ function Meteorology(props) {
                         <h2>{moment().add(3, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(3, 'days').format('dddd')}</h3>
                     </div>
+                    <div className="fullTemp">
                     <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[3].Day.Icon < 10) ? '0' + weather.DailyForecasts[3].Day.Icon : weather.DailyForecasts[3].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[3].Temperature.Maximum.Value)}°C</p></div>
+                    </div>
                 </div>
                 <div className="card" id="dayFive">
                     <div className="weekDay">
                         <h2>{moment().add(4, 'days').format('D, MMMM')}</h2>
                         <h3>{moment().add(4, 'days').format('dddd')}</h3>
                     </div>
+                    <div className="fullTemp">
                     <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[4].Day.Icon < 10) ? '0' + weather.DailyForecasts[4].Day.Icon : weather.DailyForecasts[4].Day.Icon}-s.png`}></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[4].Temperature.Maximum.Value)}°C</p></div>
+                    </div>
                 </div>
             </div>
             ) : ('')}

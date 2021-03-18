@@ -7,11 +7,14 @@
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: 4rem;
+    position: fixed;
     background-color: var(--light);
     color: var(--dark);
-    padding: 0 10rem;
+    padding: 0;
 }
 nav ul{
     list-style: none;
@@ -31,6 +34,10 @@ nav ul a:hover{
 .logo a:hover{
     font-weight: bold;
 }
+#toggle{
+    display: none;
+}
+
 
 .subheader{
     width: 100%;
@@ -39,10 +46,13 @@ nav ul a:hover{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    margin-top: 4rem;
     padding: 0;
     overflow: hidden;
     border-top: #040941 solid .1rem;
 }
+
 .subheader .countryBtn{
     display: flex;
     align-items: center;
@@ -102,11 +112,132 @@ footer{
 }
 
 @media only screen and (max-width: 600px){
+    .body{
+        height: 100%;
+    }
+    .home{
+        width: 100%;
+        height: calc(100vh - 5rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home h1{
+        text-align: center;
+        padding: 0 2rem;
+    }
+    nav{
+        padding: 0 1rem;
+        overflow: hidden;
+        justify-content: space-between;
+        z-index: 1;
+    }
+    nav ul{
+        display: none;
+    }
+    
     .subheader{
+        position: fixed;
+        right: 0;
         width: 75%;
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
+        transform: translateX(100%);
+        z-index: 1;
+        padding: 1rem 0;
     }
+    .subheader.show{
+        transform: translateX(0);
+        transition: all 0.3s ease-in-out;
+     }
+
+    span{
+        display: block;
+        background-color: var(--dark);
+        border-radius: 2px;
+      }
+      #toggle{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: var(--light);
+        border-radius: 15px;
+        position: absolute;
+        right: 50px;
+        cursor: pointer;
+      }
+      #toggle.open{
+          display: block;
+      }
+        #hamburger{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+        #hamburger span{
+            width: 30px;
+            height: 2px;
+            top: 10px;
+            left: 10px;
+            position: relative;
+            margin: 6px 0;
+          }
+        #hamburger span:nth-child(1){
+              transition-delay: 0;
+            }
+        #hamburger span:nth-child(2){
+              transition-delay: 0;
+            }
+        #hamburger span:nth-child(3){
+              transform-origin: top-right;
+              transition-delay: 0;
+            }
+
+        #cross{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotate(45deg);
+        }
+        #cross span:nth-child(1){
+              height: 0%;
+              width: 4px;
+              position: absolute;
+              top: 10%;
+              left: 24px;
+            }
+        #cross span:nth-child(2){
+              width: 0%;
+              height: 4px;
+              position: absolute;
+              top: 24px;
+              left: 10%;
+            }
+      
+      @keyframes fadeout{
+        0%{
+          opacity: 1;
+        }
+        100%{
+          opacity: 0;
+        }
+      }
+      
+        #toggle.open #hamburger span{
+             width: 0%;
+          }
+        #toggle.open #cross span:nth-child(1){
+              height: 80%;
+            }
+        #toggle.open #cross span:nth-child(2){
+              width: 80%;
+            }
+
+            footer{
+                position: relative;
+                height: 3rem;
+                margin-top: 2rem;
+            }
 }
 
