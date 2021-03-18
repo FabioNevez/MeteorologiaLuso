@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import SubHeader from './SubHeader';
 import '../style.css';
 import {Link} from 'react-router-dom';
@@ -8,9 +8,25 @@ function Header (){
 
     const[active, setActive] = useState(true);
 
-    function handleClick(){
-        setActive(true);
+
+    function HandleClickCountry(ref){
+        useEffect(() => {
+    
+            function handleClickOutside(event){
+                if(ref.current && !ref.current.contains(event.target)){
+                    setActive(true);
+                }
+            }
+    
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+    
+        }, [ref]);
     }
+    const wrapperRef = useRef(null);
+    HandleClickCountry(wrapperRef);
 
     return (
         <div>
@@ -34,7 +50,7 @@ function Header (){
         </div>
         </div>
     </nav>
-    <SubHeader active={active} onClick={handleClick} />
+    <SubHeader active={active} setActive={setActive} ref={wrapperRef} />
     </div>
     )
 }

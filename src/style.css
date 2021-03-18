@@ -111,6 +111,7 @@ footer{
     background-color: var(--light);
 }
 
+
 @media only screen and (max-width: 600px){
     .body{
         height: 100%;
@@ -119,11 +120,17 @@ footer{
         width: 100%;
         height: calc(100vh - 5rem);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
     .home h1{
         text-align: center;
+        align-self: center;
+        padding: 0 2rem;
+    }
+    .home h2{
         padding: 0 2rem;
     }
     nav{

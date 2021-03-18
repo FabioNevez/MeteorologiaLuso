@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import '../style.css';
 import {Link} from 'react-router-dom';
 
@@ -30,6 +30,10 @@ function SubHeader (props) {
         }
     }
 
+    function closeMenu(){
+        props.setActive(true)
+    }
+
     let menu = 'subheader';
     if(props.active != true){
         menu += ' show';
@@ -38,7 +42,7 @@ function SubHeader (props) {
     return (
         <div className={menu}>
             {subHeaderState.objects.map((elements, index) => (
-                <Link to={`/${elements.link}`} >
+                <Link to={`/${elements.link}`} onClick={closeMenu} >
                 <div key={index} className={toggleClass(index)} onClick={() => {toggle(index);}}>
                     <img src={process.env.PUBLIC_URL + `${elements.img}`} alt={elements.name}></img>
                     <p>{elements.name}</p>
