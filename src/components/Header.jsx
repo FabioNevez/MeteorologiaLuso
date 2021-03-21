@@ -29,7 +29,7 @@ function Header (){
     HandleClickCountry(wrapperRef);
 
     return (
-        <div>
+        <div className="fullMenu">
     <nav>
         <div className="logo">
         <Link to={'/'}><h1>Info Lusofonia</h1></Link>
