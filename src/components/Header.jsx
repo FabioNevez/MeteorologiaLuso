@@ -32,10 +32,10 @@ function Header (){
         <div className="fullMenu">
     <nav>
         <div className="logo">
-        <Link to={'/'}><h1>Info Lusofonia</h1></Link>
+        <Link to={'/'}><h1>Meteorologia Luso</h1></Link>
         </div>
         <ul>
-        <Link to={'/About'}><li>About</li></Link>
+        <Link to={'/About'}><li>Sobre</li></Link>
         </ul>
         <div id="toggle" className={active ? null : 'open'} onClick={() => setActive(!active)}>
             <div id="hamburger">
