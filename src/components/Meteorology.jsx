@@ -205,7 +205,10 @@ function Meteorology(props) {
 
     useEffect(() => {
         
-        fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${k}?apikey=${process.env.REACT_APP_SECRET_KEY}&language=en-US&details=false&metric=true`)
+        fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${k}?apikey=${process.env.REACT_APP_SECRET_KEY}&language=en-US&details=false&metric=true`, {
+            mode: 'cors',
+            credentials: 'include'
+          })
         .then(res => res.json())
         .then(
             (result) => {
