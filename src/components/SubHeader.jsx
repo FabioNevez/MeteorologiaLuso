@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState} from 'react';
 import '../style.css';
 import {Link} from 'react-router-dom';
 
@@ -35,7 +35,7 @@ function SubHeader (props) {
     }
 
     let menu = 'subheader';
-    if(props.active != true){
+    if(props.active !== true){
         menu += ' show';
     }
 

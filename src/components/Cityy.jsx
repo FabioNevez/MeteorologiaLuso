@@ -83,6 +83,8 @@ function Cityy(props){
         case 'Timor Leste':
              x = countries[8];
             break;
+        default: 
+         console.log('something wrong');
     }
 
     return  (

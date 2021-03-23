@@ -45,6 +45,8 @@ function Clock(props){
         case 'Timor Leste':
             q = timorLeste;
             break;
+        default:
+            console.log('something wrong');
     }
 
     const[time, setTime] = useState('');
@@ -57,7 +59,7 @@ function Clock(props){
 
         return () => clearInterval(timer);
 
-    });
+    }, [q]);
 
     return(
         <div className="time">

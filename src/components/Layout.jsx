@@ -1,16 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import LayoutHeader from './LayoutHeader';
 import Meteorology from './Meteorology';
 import '../layout.css';
-import Cityy from './Cityy';
 
 function Layout(props) {
     const[infoCity, setInfoCity]= useState('');
-
-    useEffect(() => {
-        console.log(infoCity);
-        console.log(setInfoCity);
-    })
 
     return (
         <div className="layout">

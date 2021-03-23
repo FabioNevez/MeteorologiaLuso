@@ -36,6 +36,8 @@ function Meteorology(props) {
         case 'Timor Leste':
              c = keys[8];
             break;
+        default:
+        console.log('nenhuma cidade escolhida');
     }
 
     let y = c.cities[0];
@@ -192,6 +194,8 @@ function Meteorology(props) {
         case "Tocantins":
              y = c.cities[25];
             break;
+        default:
+        console.log('nenhuma cidade escolhida');
     }
     let k = y.key;
 
@@ -201,6 +205,7 @@ function Meteorology(props) {
 
 
     useEffect(() => {
+        
         fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${k}?apikey=${process.env.REACT_APP_SECRET_KEY}&language=en-US&details=false&metric=true`)
         .then(res => res.json())
         .then(
@@ -208,7 +213,6 @@ function Meteorology(props) {
                 // setCity('');
                 setIsLoaded(true);
                 setWeather(result);
-                console.log(result);
             },
             (error) => {
                 setIsLoaded(true);
@@ -241,7 +245,7 @@ function Meteorology(props) {
                         <h3>{moment().format('dddd')}</h3>
                     </div>
                     <div className="fullTemp">
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[0].Day.Icon < 10) ? '0' + weather.DailyForecasts[0].Day.Icon : weather.DailyForecasts[0].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[0].Day.Icon < 10) ? '0' + weather.DailyForecasts[0].Day.Icon : weather.DailyForecasts[0].Day.Icon}-s.png`} alt="meteo icon"></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[0].Temperature.Maximum.Value)}°C</p></div>
                     </div>
                     </div>
@@ -252,7 +256,7 @@ function Meteorology(props) {
                         <h3>{moment().add(1, 'days').format('dddd')}</h3>
                     </div>
                     <div className="fullTemp">
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[1].Day.Icon < 10) ? '0' + weather.DailyForecasts[1].Day.Icon : weather.DailyForecasts[1].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[1].Day.Icon < 10) ? '0' + weather.DailyForecasts[1].Day.Icon : weather.DailyForecasts[1].Day.Icon}-s.png`} alt="meteo icon"></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[1].Temperature.Maximum.Value)}°C</p></div>
                     </div>
                 </div>
@@ -263,7 +267,7 @@ function Meteorology(props) {
                         <h3>{moment().add(2, 'days').format('dddd')}</h3>
                     </div>
                     <div className="fullTemp">
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[2].Day.Icon < 10) ? '0' + weather.DailyForecasts[2].Day.Icon : weather.DailyForecasts[2].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[2].Day.Icon < 10) ? '0' + weather.DailyForecasts[2].Day.Icon : weather.DailyForecasts[2].Day.Icon}-s.png`} alt="meteo icon"></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[2].Temperature.Maximum.Value)}°C</p></div>
                     </div>
                 </div>
@@ -274,7 +278,7 @@ function Meteorology(props) {
                         <h3>{moment().add(3, 'days').format('dddd')}</h3>
                     </div>
                     <div className="fullTemp">
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[3].Day.Icon < 10) ? '0' + weather.DailyForecasts[3].Day.Icon : weather.DailyForecasts[3].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[3].Day.Icon < 10) ? '0' + weather.DailyForecasts[3].Day.Icon : weather.DailyForecasts[3].Day.Icon}-s.png`} alt="meteo icon"></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[3].Temperature.Maximum.Value)}°C</p></div>
                     </div>
                 </div>
@@ -284,7 +288,7 @@ function Meteorology(props) {
                         <h3>{moment().add(4, 'days').format('dddd')}</h3>
                     </div>
                     <div className="fullTemp">
-                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[4].Day.Icon < 10) ? '0' + weather.DailyForecasts[4].Day.Icon : weather.DailyForecasts[4].Day.Icon}-s.png`}></img>
+                    <img className="icon" src={`https://apidev.accuweather.com/developers/Media/Default/WeatherIcons/${(weather.DailyForecasts[4].Day.Icon < 10) ? '0' + weather.DailyForecasts[4].Day.Icon : weather.DailyForecasts[4].Day.Icon}-s.png`} alt="meteo icon"></img>
                     <div className="temp"><p>{Math.floor(weather.DailyForecasts[4].Temperature.Maximum.Value)}°C</p></div>
                     </div>
                 </div>
