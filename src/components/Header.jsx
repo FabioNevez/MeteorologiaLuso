@@ -50,7 +50,7 @@ function Header (){
         </div>
         </div>
     </nav>
-    <SubHeader active={active} setActive={setActive} ref={wrapperRef} />
+    <SubHeader active={active} setActive={setActive} innerRef={wrapperRef} />
     </div>
     )
 }

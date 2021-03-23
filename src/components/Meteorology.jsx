@@ -173,7 +173,6 @@ function Meteorology(props) {
              y = c.cities[18];
             break;
         case "Rondônia":
-        case "Portalegre":
              y = c.cities[19];
             break;
         case "Roraima":

@@ -33,7 +33,7 @@ function Cityy(props){
 
     function City(props){
         return(
-            <li onClick={cityClicked}>{props.cityName}</li>
+            <li key={countries.id} onClick={cityClicked}>{props.cityName}</li>
         )
     }
 
@@ -84,7 +84,7 @@ function Cityy(props){
              x = countries[8];
             break;
         default: 
-         console.log('something wrong');
+         console.log('Nenhum país escolhido');
     }
 
     return  (

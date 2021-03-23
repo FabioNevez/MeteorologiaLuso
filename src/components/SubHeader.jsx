@@ -38,12 +38,13 @@ function SubHeader (props) {
     if(props.active !== true){
         menu += ' show';
     }
+    
 
     return (
         <div className={menu}>
             {subHeaderState.objects.map((elements, index) => (
-                <Link to={`/${elements.link}`} onClick={closeMenu} >
-                <div key={index} className={toggleClass(index)} onClick={() => {toggle(index);}}>
+                <Link key={elements.id} to={`/${elements.link}`} onClick={closeMenu} >
+                <div className={toggleClass(index)} onClick={() => {toggle(index);}}>
                     <img src={process.env.PUBLIC_URL + `${elements.img}`} alt={elements.name}></img>
                     <p>{elements.name}</p>
                 </div>
