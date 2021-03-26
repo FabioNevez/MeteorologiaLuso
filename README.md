@@ -1,6 +1,6 @@
-# InfoLuso web app
+# Meteorologia Luso
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto tem como objetivo mostrar a meteorologia dos países da lusofonia. 
 
 ## Available Scripts
 
