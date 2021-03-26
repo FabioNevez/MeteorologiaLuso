@@ -129,6 +129,18 @@ footer{
 .home img{
     width: 40%;
 }
+
+.loaderFetch{
+
+    width: 6em;
+    height: 6em;
+    border: 1.1em solid rgba(78, 78, 78, 0.2);
+    border-left: 1.1em solid #040941;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+    transition: opacity 0.3s;
+  }
+  
 @media only screen and (max-width: 900px){
     .home{
         padding: 0 2rem;
@@ -138,7 +150,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
     .body{
         height: 100%;
     }

@@ -24,7 +24,6 @@ code {
   left: calc(50% - 4em);
   width: 6em;
   height: 6em;
-  background-color: white;
   border: 1.1em solid rgba(168, 252, 255, 0.2);
   border-left: 1.1em solid #3ACEB9;
   border-radius: 50%;
@@ -34,6 +33,7 @@ code {
 
 .loader--hide {
   opacity: 0;
+  display: none;
 }
 
 @keyframes load8 {
