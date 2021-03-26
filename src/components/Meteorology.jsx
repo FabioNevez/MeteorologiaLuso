@@ -194,7 +194,7 @@ function Meteorology(props) {
              y = c.cities[25];
             break;
         default:
-        console.log('nenhuma cidade escolhida');
+            y = c.cities[0];
     }
     let k = y.key;
 
@@ -230,7 +230,7 @@ function Meteorology(props) {
           weekday[6] = "Saturday";
 
     if(error){
-        return <div>Error: {error.message}</div>
+        return <div>Ups houve um erro: {error.message}</div>
     }  else if (!isLoaded) {
       return <div className="loaderFetch"></div>
     } else {

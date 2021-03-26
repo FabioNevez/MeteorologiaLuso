@@ -6,8 +6,42 @@ import arrow from '../icons/arrow.svg';
 
 function Cityy(props){
 
+    let x = '';
+ 
+    switch (props.countryyName){
+        case "Angola":
+             x = countries[0];
+            break;
+        case 'Brasil':
+             x = countries[1];
+            break;
+        case 'Cabo Verde':
+             x = countries[2];
+            break;
+        case 'Guiné Bissau':
+             x = countries[3];
+            break;
+        case 'Macau':
+             x = countries[4];
+            break;
+        case 'Moçambique':
+             x = countries[5];
+            break;
+        case 'Portugal':
+             x = countries[6];
+        break;
+        case 'São Tomé e Príncipe':
+             x = countries[7];
+            break;
+        case 'Timor Leste':
+             x = countries[8];
+            break;
+        default: 
+            x = countries[0];
+    }
+
     const [isClicked, setClick] = useState(false);
-    const [chooseCity, chosenCity] = useState('Choose city');
+    const [chooseCity, chosenCity] = useState(x.states[0]);
 
     function Outside(ref){
         useEffect(() => {
@@ -51,40 +85,6 @@ function Cityy(props){
         return <City 
         key={countries.id}
         cityName={city} />
-    }
-
-    let x = '';
- 
-    switch (props.countryyName){
-        case "Angola":
-             x = countries[0];
-            break;
-        case 'Brasil':
-             x = countries[1];
-            break;
-        case 'Cabo Verde':
-             x = countries[2];
-            break;
-        case 'Guiné Bissau':
-             x = countries[3];
-            break;
-        case 'Macau':
-             x = countries[4];
-            break;
-        case 'Moçambique':
-             x = countries[5];
-            break;
-        case 'Portugal':
-             x = countries[6];
-        break;
-        case 'São Tomé e Príncipe':
-             x = countries[7];
-            break;
-        case 'Timor Leste':
-             x = countries[8];
-            break;
-        default: 
-         console.log('Nenhum país escolhido');
     }
 
     return  (
