@@ -18,6 +18,33 @@ code {
     monospace;
 }
 
+.loader{
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 6em;
+  height: 6em;
+  background-color: white;
+  border: 1.1em solid rgba(168, 252, 255, 0.2);
+  border-left: 1.1em solid #3ACEB9;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+  transition: opacity 0.3s;
+}
+
+.loader--hide {
+  opacity: 0;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 @media only screen and (max-width: 600px){
   html, body{

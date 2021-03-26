@@ -1,6 +1,7 @@
 import './style.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import {useEffect} from 'react';
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import Portugal from './pages/portugal';
 import Angola from './pages/angola';
@@ -14,7 +15,9 @@ import TimorLeste from './pages/timor-leste';
 import Home from './pages/home';
 import About from './pages/about';
 
-function App() {
+
+function App({hideLoader}) {
+  useEffect(hideLoader, []);
 
   return (
   <Router> 
