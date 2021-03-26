@@ -204,10 +204,6 @@ function Meteorology(props) {
 
 
     useEffect(() => {
-        // headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-        // headers.append('Access-Control-Allow-Credentials', 'true');
-
-        // {mode: 'no-cors', method: "GET"}
         
         fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${k}?apikey=${process.env.REACT_APP_SECRET_KEY}&language=en-US&details=false&metric=true`)
         .then(res => res.json())
